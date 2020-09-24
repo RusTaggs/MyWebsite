@@ -3,3 +3,32 @@
   margin: 0;
   padding: 0;
 }
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 200px;
+  min-width: 1200px;
+  position: relative;
+}
+.wrapper .header {
+  width: 100%;
+  height: 100vh;
+}
+.wrapper .header nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrapper .about {
+  height: 100vh;
+}
+.wrapper .skills {
+  height: 100vh;
+}
+.wrapper .works {
+  height: 100vh;
+}
+.wrapper .footer {
+  height: 100vh;
+}
