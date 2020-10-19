@@ -56,6 +56,17 @@ header {
 .menu .menu__item:hover {
   color: #707070;
 }
+.menu .menu_mobile {
+  display: none;
+}
+.menu .menu_mobile span {
+  height: 2px;
+  width: 50px;
+  background: #000;
+}
+.menu .menu_mobile {
+  transform: rotate(90deg);
+}
 
 .main {
   padding: 0 30px;
@@ -68,6 +79,7 @@ header {
 }
 .main .title {
   padding-bottom: 2em;
+  text-align: center;
 }
 .main img {
   width: 100%;
@@ -103,7 +115,7 @@ header {
   flex-wrap: wrap;
 }
 .skills .skills__container .skills__item {
-  margin: 0 2.5em;
+  margin: 2em 2.5em;
   width: 200px;
   height: 300px;
   display: flex;
@@ -116,8 +128,7 @@ header {
 }
 .skills .skills__container .skills__item img {
   width: 100%;
-  height: 100%;
-  background: grey;
+  object-fit: cover;
 }
 
 .works {
@@ -133,21 +144,38 @@ header {
   flex-wrap: wrap;
 }
 .works .works__container .works__item {
-  margin: 0 0.7em;
+  position: relative;
+  margin: 0.5em 0.7em;
   width: 350px;
-  height: 500px;
+  height: 400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+}
+.works .works__container .works__item .works__img {
+  overflow: hidden;
+  width: 350px;
+  height: 350px;
 }
 .works .works__container .works__item .text {
   margin: 20px auto;
 }
 .works .works__container .works__item img {
   width: 100%;
-  height: 100%;
-  background: grey;
+  object-fit: contain;
+}
+.works .works__container .works__item:after {
+  transition: 0.3s ease-in;
+}
+.works .works__container .works__item:hover:after {
+  content: "";
+  transition: 0.3s ease-in;
+  width: 300px;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  background-color: black;
 }
 
 footer {
@@ -156,8 +184,40 @@ footer {
   background: #818181;
 }
 
-@media only screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
   .menu__item {
     display: none;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu .menu_mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    height: 3em;
+  }
+}
+@media (max-width: 350px) {
+  .works .works__container .works__item {
+    width: 250px;
+    height: 300px;
+    margin: 0.5em 0;
+    padding: 0 20px;
+  }
+  .works .works__container .works__item .works__img {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+  }
+  .works .works__container .works__item::after {
+    width: 150px;
+  }
+
+  .works .works__container .works__item::after {
+    width: 150px;
   }
 }
